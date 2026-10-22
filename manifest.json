@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "io.github.yilmaz41.hairline",
+  "name": "Hairline",
+  "version": "1.0.0",
+  "author": "Yilmaz41",
+  "description": "Quiet CPU, GPU and memory readout for the bar, with temperatures and hairline load gauges that follow your theme. Reads /proc and /sys directly; no polling scripts.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Hairline",
+    "description": "CPU, GPU and memory load with temperatures",
+    "category": "System",
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "interval": 2000,
+      "gpu": "auto"
+    },
+    "schema": [
+      {
+        "key": "interval",
+        "type": "integer",
+        "label": "Refresh interval (ms)",
+        "min": 500,
+        "max": 10000,
+        "step": 500,
+        "defaultValue": 2000
+      },
+      {
+        "key": "gpu",
+        "type": "enum",
+        "label": "GPU source",
+        "options": ["auto", "nvidia", "amd", "off"],
+        "defaultValue": "auto",
+        "description": "Auto reads the GPU on desktops and turns it off on machines with a battery, so a hybrid laptop's discrete GPU can still sleep."
+      }
+    ]
+  },
+  "license": "MIT"
+}
