@@ -1,4 +1,4 @@
-# Hairline
+# No Nonsense Monitors
 
 A quiet CPU, GPU and memory readout for the Omarchy bar.
 
